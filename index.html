@@ -53,20 +53,27 @@
         </article>
     </main>
     <script type="text/javascript">
-        var languageCurrent = "fr"
-        var languageHidden = "en"
+        var languageCurrent = {
+            name: "fr",
+            label: "Passer au français",
+        }
+        var languageHidden = {
+            name: "en",
+            label: "Switch to English",
+        }
 
         document.getElementById("language-toggle").addEventListener("click", (event) => {
-            for (const elem of document.getElementsByClassName(languageCurrent)) {
+            for (const elem of document.getElementsByClassName(languageCurrent.name)) {
                 elem.classList.add("noshow")
             }
-            for (const elem of document.getElementsByClassName(languageHidden)) {
+            for (const elem of document.getElementsByClassName(languageHidden.name)) {
                 elem.classList.remove("noshow")
             }
 
             const swap = languageCurrent
             languageCurrent = languageHidden
             languageHidden = swap
+            document.getElementById("language-toggle").innerText = languageHidden.label
         })
     </script>
 </body>
