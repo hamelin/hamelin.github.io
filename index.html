@@ -6,7 +6,15 @@
 </head>
 <body>
     <header>
-        <h1>Benoit Hamelin</h1>
+        <div class="title-nav">
+            <div>
+                <h1>Benoit Hamelin</h1>
+                <div>From Gatineau, Québec, Canada</div>
+            </div>
+            <div>
+                <button id="language-toggle" value="Switch to English">
+            </div>
+        </div>
         <div class="polyglot">
             <div class="fr">
                 <p>
@@ -38,8 +46,28 @@
             </div>
         </div>
     </header>
-    <p style="display: none;">
-        Hello world!
-    </p>
+    <main>
+        <article>
+            <h2>Of energy</h2>
+
+        </article>
+    </main>
+    <script type="text/javascript">
+        var languageCurrent = "fr"
+        var languageHidden = "en"
+
+        document.getElementById("language-toggle").addEventListener("click", (event) => {
+            for (const elem of document.getElementsByClassName(languageCurrent)) {
+                elem.classList.add("noshow")
+            }
+            for (const elem of document.getElementsByClassName(languageHidden)) {
+                elem.cxlassList.remove("noshow")
+            }
+
+            const swap = languageCurrent
+            languageCurrent = languageHidden
+            languageHidden = swap
+        })
+    </script>
 </body>
 </html>
