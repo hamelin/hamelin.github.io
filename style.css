@@ -1,0 +1,22 @@
+.polyglot {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: baseline;
+    justify-content: center;
+    align-content: center;
+}
+
+.polyglot > div {
+    flex: 1 1 auto;
+    align-self: flex-start;
+}
+
+.noshow {
+    display: none
+}
+
+.fr {
+}
+
+.en {
+}
