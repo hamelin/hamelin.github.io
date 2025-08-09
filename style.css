@@ -1,16 +1,23 @@
 .columns {
     display: flex;
     flex-flow: row nowrap;
-    align-items: baseline;
+    align-items: center;
     justify-content: space-between;
     align-content: center;
 }
 
 .columns > div {
     flex: 0 1 auto;
-    align-self: flex-start;
     width: fit-content;
     height: fit-content;
+}
+
+.name {
+    margin-bottom: 0px;
+}
+
+#intro {
+    margin-top: 1em;
 }
 
 .polyglot {
@@ -34,4 +41,17 @@
 }
 
 .en {
+}
+
+.post-meta {
+    margin-bottom: 1em;
+}
+
+.post-meta > h2 {
+    margin-bottom: 0pt;
+}
+
+.post-meta > div {
+    font-style: italic;
+    font-size: smaller;
 }

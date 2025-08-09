@@ -1,0 +1,32 @@
+div.content {
+    text-align: center;
+    max-width: 2.75in;
+    min-width: 1.5in;
+    margin-left: auto;
+    padding-left: 0px;
+    margin-right: auto;
+    padding-right: 0px;
+}
+div.content img {
+    width: 100%;
+}
+
+div.heading-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+h1.heading {
+    width: fit-content;
+}
+
+div.previous {
+    width: fit-content;
+    font-size: small;
+    text-align: right;
+}
+
+dl.index > dd {
+    font-weight: bold;
+}
