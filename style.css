@@ -9,6 +9,7 @@
 .title-nav > div {
     flex: 1 1 auto;
     align-self: flex-start;
+    width: 100%;
 }
 
 .polyglot {
