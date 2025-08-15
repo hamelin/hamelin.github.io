@@ -152,7 +152,8 @@ class Post:
             div_part["class"] = class_
             div_part.append(part)
             parts.append(div_part)
-        parts.append(self.part("suffix"))
+        if str(suffix := self.part("suffix")):
+            parts.append(suffix)
         post_full = BeautifulSoup(
             f'<article><a id="{self.get_id()}"></a></article>',
             features="html.parser"
@@ -202,10 +203,4 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    import pdb
-    try:
-        main()
-    except SystemExit:
-        raise
-    except:
-        pdb.post_mortem()
+    main()
