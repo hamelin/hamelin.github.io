@@ -20,6 +20,10 @@
     margin-top: 1em;
 }
 
+article {
+    border-top: dotted #aaaaaa;
+}
+
 .polyglot {
     display: flex;
     flex-flow: row nowrap;
