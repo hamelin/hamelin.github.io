@@ -145,7 +145,7 @@ class Post:
             link = soup.new_tag("a")
             link["class"] = "selflink"
             link["href"] = f"#{self.get_id()}"
-            link.append("&Lambda;")
+            link.append("Λ")
             heading.append(link)
             title = heading.wrap(soup.new_tag("div"))
             title["class"] = "post-meta"
