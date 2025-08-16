@@ -59,3 +59,18 @@ article {
     font-style: italic;
     font-size: smaller;
 }
+
+.selflink {
+    color: #cccccc;
+    text-decoration: underline dotted;
+}
+
+.selflink:hover {
+    color: #000000;
+    text-decoration: underline solid;
+}
+
+.selflink:active {
+    color: #000000;
+    text-decoration: underline solid;
+}
