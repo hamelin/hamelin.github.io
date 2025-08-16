@@ -1,5 +1,5 @@
 # /// script
-# requires-python = ">=3.9"
+# requires-python = ">=3.11"
 # dependencies = [
 #     "bs4",
 #     "mistune",
@@ -10,6 +10,7 @@
 from bs4 import BeautifulSoup
 from bs4.formatter import HTMLFormatter
 from collections import defaultdict
+from copy import copy
 import datetime as dt
 from http.server import HTTPServer, SimpleHTTPRequestHandler
 import mistune
@@ -116,28 +117,36 @@ class Post:
 
     def __init__(self, markdown) -> None:
         self.date, markdown = parse_date(markdown)
-        self.texts = dict(
+        self._soups = dict(
             zip(
                 ["fr", "en", "suffix"], 
-                (markdown.split("---\n") + ["", ""])[:3],
+                [
+                    BeautifulSoup(md2html(text), features="html.parser")
+                    for text in (markdown.split("---\n") + ["", ""])[:3]
+                ],
             )
         )
 
     def get_id(self) -> str:
-        part_en = self.part("en")
+        soup_en = self._soups["en"]
         ts = self.date.strftime("%Y%m%d")
         title_sanitized = re.sub(
             r"[^a-z0-9]",
-            "",
-            (part_en.h1 or part_en.h2).get_text().lower()
+            " ",
+            (soup_en.h1 or soup_en.h2).get_text().lower()
         )
         return "-".join([ts, *[w for w in title_sanitized.split() if w]])
 
     def part(self, part: str) -> BeautifulSoup:
-        if part not in self.texts:
+        if part not in self._soups:
             return BeautifulSoup("", features="html.parser")
-        soup = BeautifulSoup(md2html(self.texts[part]), features="html.parser")
+        soup = copy(self._soups[part])
         if heading := (soup.h1 or soup.h2):
+            link = soup.new_tag("a")
+            link["class"] = "selflink"
+            link["href"] = f"#{self.get_id()}"
+            link.append("&Lambda;")
+            heading.append(link)
             title = heading.wrap(soup.new_tag("div"))
             title["class"] = "post-meta"
             div_date = title.append(soup.new_tag("div"))
