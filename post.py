@@ -41,7 +41,10 @@ class HighlightingRenderer(mistune.HTMLRenderer):
         return f"<pre><code>{mistune.escape(code)}</code></pre>"
 
 
-md2html = mistune.create_markdown(renderer=HighlightingRenderer())
+md2html = mistune.create_markdown(
+    plugins=["table"],
+    renderer=HighlightingRenderer()
+)
 
     
 def get_code_markdown() -> str:
