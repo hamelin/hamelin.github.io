@@ -57,6 +57,83 @@
         </header>
         <main>
             <article>
+                <a id="20250925-pdf-conversion-for-professional-printing">
+                </a>
+                <div class="polyglot">
+                </div>
+                <div class="fr">
+                    <div class="post-meta">
+                        <h1>
+                            Conversion d'un PDF pour l'impression professionnelle
+                            <a class="selflink" href="#20250925-pdf-conversion-for-professional-printing">
+                                Λ
+                            </a>
+                        </h1>
+                        <div>
+                            Jeudi, 25 septembre 2025
+                        </div>
+                    </div>
+                    <p>
+                        Les imprimeurs produisent des documents qui sont préparés dans un espace de couleurs CMYK.
+Malheureusement, la plupart des outils de rédaction et de typographie présentent un outillage de couleurs
+qui favorise l'espace RGB,
+idéalement représenté sur un moniteur graphique.
+Par conséquent,
+les documents produits,
+s'ils ne sont pas post-traités pour l'impression professionnelle,
+peuvent sembler moches une fois imprimés.
+                    </p>
+                    <p>
+                        Pour contourner, on peut convertir un document exporté au format PDF à l'espace CMYK
+et visualiser les changements esthétiques qui en résultent avant d'aller à l'impression.
+Le résultat de cette conversion doit être ce qu'on envoit à l'imprimeur.
+                    </p>
+                </div>
+                <div class="en noshow">
+                    <div class="post-meta">
+                        <h1>
+                            PDF conversion for professional printing
+                            <a class="selflink" href="#20250925-pdf-conversion-for-professional-printing">
+                                Λ
+                            </a>
+                        </h1>
+                        <div>
+                            Thursday, September 25, 2025
+                        </div>
+                    </div>
+                    <p>
+                        Printers (the people and companies, not the fiddly machines that take up dust on our desks)
+produce documents that must be prepared in the CMYK color space.
+Unfortunately,
+most authoring tools make one work in the RGB color space,
+which is represented ideally on a monitor screen.
+Thus,
+the documents we author,
+unless they are postprocessed for professional printing,
+can look ugly and washed out once printed.
+                    </p>
+                    <p>
+                        To work around this issue,
+one can convert a document authored in RGB to a PDF,
+and have it re-expressed to CMYK so as to appraise the aesthetic changes prior to printing.
+The output of this re-expression is what must be sent to the printer.
+                    </p>
+                </div>
+                <div class="highlight">
+                    <pre><span></span>gs<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-dSAFER<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-dBATCH<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-dNOPAUSE<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-dNOCACHE<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-dPDFX<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-sDEVICE<span class="o">=</span>pdfwrite<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-sColorConversionStrategy<span class="o">=</span>CMYK<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-sOutputFile<span class="o">=</span>output.cmyk.pdf<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>input.pdf
+</pre>
+                </div>
+            </article>
+            <article>
                 <a id="20250915-css-classes-for-simple-admonitions-in-jupyter-notebooks">
                 </a>
                 <div class="polyglot">
