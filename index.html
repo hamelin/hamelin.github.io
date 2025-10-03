@@ -57,6 +57,186 @@
         </header>
         <main>
             <article>
+                <a id="20251002-using-pageant-with-openssh-and-visual-studio-code-under-windows">
+                </a>
+                <div class="polyglot">
+                </div>
+                <div class="fr">
+                    <div class="post-meta">
+                        <h2>
+                            Utiliser Pageant avec OpenSSH et Visual Studio Code sous Windows
+                            <a class="selflink" href="#20251002-using-pageant-with-openssh-and-visual-studio-code-under-windows">
+                                Λ
+                            </a>
+                        </h2>
+                        <div>
+                            Jeudi, 2 octobre 2025
+                        </div>
+                    </div>
+                    <p>
+                        Quiconque utilise
+                        <a href="https://www.openssh.com/">
+                            OpenSSH
+                        </a>
+                        gagne à prendre le temps
+de comprendre et de mettre en oeuvre
+                        <a href="https://docs.alliancecan.ca/wiki/Using_SSH_keys_in_Linux">
+                            l'authentification à clés asymétriques
+                        </a>
+                        ,
+et de se faciliter la vie en apprenant à se servir d'un
+                        <a href="https://smallstep.com/blog/ssh-agent-explained/">
+                            agent
+                        </a>
+                        fiduciaire de ses clés.
+Alors que
+                        <code>
+                            ssh-agent
+                        </code>
+                        tend à être plutôt bien intégré aux interfaces usagers
+sous MacOS et la plupart des systèmes d'exploitation GNU/Linux,
+le service est parfois désactivé sous Microsoft Windows,
+particulièrement dans certains environnements corporatifs.
+Pour ces situations,
+l'agent
+                        <a href="https://the.earth.li/~sgtatham/putty/0.83/htmldoc/Chapter9.html#pageant">
+                            Pageant
+                        </a>
+                        (de la suite d'outils SSH
+                        <a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html">
+                            Putty
+                        </a>
+                        )
+s'avère d'un usage agréable.
+Cependant, plusieurs outils de développement modernes sous Windows,
+tels que
+                        <a href="https://code.visualstudio.com/">
+                            Visual Studio Code,
+                        </a>
+                        intègrent strictement le client OpenSSH à leurs opérations de calculs à distance.
+On se retrouve avec un cas de cheville carrée à enfoncer dans un trou rond.
+                    </p>
+                    <p>
+                        <a href="https://stackoverflow.com/questions/61771200/using-pageant-with-vscode-on-windows-10">
+                            Via StackOverflow,
+                        </a>
+                        il semble que depuis la version 0.78,
+Pageant s'intègre avec OpenSSH, faisant en sorte que tout requête
+de justificatif d'identité par le client
+                        <code>
+                            ssh
+                        </code>
+                        soit acheminée vers une instance
+de Pageant.
+                        <strong>
+                            À remarquer:
+                        </strong>
+                        contrairement à ce que suggère l'article ci-haut,
+Pageant ne supporte pas les fichiers de clé privée au format OpenSSH &mdash;
+ni en chargement via l'interface, ni en paramètre à la ligne de commande.
+Il faut donc utiliser l'outil
+                        <a href="https://the.earth.li/~sgtatham/putty/0.83/htmldoc/Chapter8.html#pubkey-puttygen">
+                            PuTTYgen
+                        </a>
+                        soit pour générer une paire de clés,
+soit pour convertir une paire de clés OpenSSH générée à l'aide de
+                        <a href="https://linux.die.net/man/1/ssh-keygen">
+                            <code>
+                                ssh-keygen
+                            </code>
+                            .
+                        </a>
+                    </p>
+                </div>
+                <div class="en noshow">
+                    <div class="post-meta">
+                        <h2>
+                            Using Pageant with OpenSSH and Visual Studio Code under Windows
+                            <a class="selflink" href="#20251002-using-pageant-with-openssh-and-visual-studio-code-under-windows">
+                                Λ
+                            </a>
+                        </h2>
+                        <div>
+                            Thursday, October 2, 2025
+                        </div>
+                    </div>
+                    <p>
+                        Whoever uses
+                        <a href="https://www.openssh.com/">
+                            OpenSSH
+                        </a>
+                        benefits from taking the time to comprehend and implement
+                        <a href="https://docs.alliancecan.ca/wiki/Using_SSH_keys_in_Linux">
+                            assymetric key authentication
+                        </a>
+                        ,
+and to make their lives easier by learning the usage of
+a key
+                        <a href="https://smallstep.com/blog/ssh-agent-explained/">
+                            agent.
+                        </a>
+                        Whereas
+                        <code>
+                            ssh-agent
+                        </code>
+                        tends to be integrated well enough to the user interfaces
+of MacOS and most GNU/Linux operating systems,
+the service is sometimes deactivated on Microsoft Windows,
+especially in corporate environments.
+In such situations
+                        <a href="https://the.earth.li/~sgtatham/putty/0.83/htmldoc/Chapter9.html#pageant">
+                            Pageant
+                        </a>
+                        (from the
+                        <a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html">
+                            Putty
+                        </a>
+                        SSH toolkit)
+makes for a good substitute.
+However,
+many modern dev tools on Windows,
+and I'm looking here at
+                        <a href="https://code.visualstudio.com/">
+                            Visual Studio Code,
+                        </a>
+                        strictly integrate the usage of the OpenSSH client to their remote computing
+operation.
+One ends up with a case of square peg to fit in a round hole.
+                    </p>
+                    <p>
+                        <a href="https://stackoverflow.com/questions/61771200/using-pageant-with-vscode-on-windows-10">
+                            Via StackOverflow,
+                        </a>
+                        it appears that since version 0.78,
+Pageant effectively integrates with OpenSSH,
+so that it services any credential request from the
+                        <code>
+                            ssh
+                        </code>
+                        client.
+                        <strong>
+                            Remark:
+                        </strong>
+                        contrary to what the article above suggests,
+I have observed that Pageant does not support OpenSSH keypairs &mdash;
+it errors on attempting to load OpenSSH-generated private keys with both the GUI
+and the command line.
+One must thus use the
+                        <a href="https://the.earth.li/~sgtatham/putty/0.83/htmldoc/Chapter8.html#pubkey-puttygen">
+                            PuTTYgen
+                        </a>
+                        tool either to generate their keypair,
+or to convert the keypair they generated with
+                        <a href="https://linux.die.net/man/1/ssh-keygen">
+                            <code>
+                                ssh-keygen
+                            </code>
+                            .
+                        </a>
+                    </p>
+                </div>
+            </article>
+            <article>
                 <a id="20250925-pdf-conversion-for-professional-printing">
                 </a>
                 <div class="polyglot">
