@@ -57,6 +57,161 @@
         </header>
         <main>
             <article>
+                <a id="20251208-new-project-launched-ziphttpd">
+                </a>
+                <div class="polyglot">
+                </div>
+                <div class="fr">
+                    <div class="post-meta">
+                        <h2>
+                            Nouveau projet lancé:
+                            <a href="https://github.com/hamelin/ziphttpd">
+                                ziphttpd
+                            </a>
+                            <a class="selflink" href="#20251208-new-project-launched-ziphttpd">
+                                Λ
+                            </a>
+                        </h2>
+                        <div>
+                            Lundi, 8 décembre 2025
+                        </div>
+                    </div>
+                    <p>
+                        Il m'arrive fréquemment de télécharger une archive Zip de documents web,
+dont j'aimerais rapidement feuilleter le contenu.
+En principe, c'est aussi simple que de déployer le contenu de l'archive sur mon stockage local,
+puis lancer un serveur web comme
+                        <a href="https://docs.python.org/3/library/http.server.html">
+                            <code>
+                                http.server
+                            </code>
+                        </a>
+                        .
+Mais pour diverses raisons,
+l'étape de décompression peut m'agacer.
+J'aimerais juste lancer mon serveur web contre le contenu du fichier Zip.
+                    </p>
+                    <p>
+                        C'est exactement ce que fait
+                        <a href="https://github.com/hamelin/ziphttpd">
+                            <code>
+                                ziphttpd
+                            </code>
+                        </a>
+                        .
+Disons que je viens de télécharger la
+                        <a href="https://sqlite.org/2025/sqlite-doc-3510100.zip">
+                            documentation de SQLite
+                        </a>
+                        pour consulter ça tranquille sans Internet:
+                    </p>
+                    <div class="highlight">
+                        <pre><span></span>uvx<span class="w"> </span>ziphttpd<span class="w"> </span>-B<span class="w"> </span>sqlite-doc-3510100.zip
+</pre>
+                    </div>
+                    <p>
+                        Le serveur démarre et indique:
+                    </p>
+                    <pre><code>Server set up at http://127.0.0.1:63631/
+</code></pre>
+                    <p>
+                        Je dirige mon navigateur vers
+                        <code>
+                            http://127.0.0.1:63631/sqlite-doc-3510100/docs.html
+                        </code>
+                        et c'est parti.
+                    </p>
+                    <p>
+                        La faiblesse actuelle du projet est de ne pas énumérer le contenu de la hiérarchie
+de fichiers comprise dans l'archive.
+Seuls les fichiers sont associés à un URL consultable.
+Il faut qu'un <em>répertoire</em> contienne un
+fichier
+                        <code>
+                            index.html
+                        </code>
+                        pour être accédé directement,
+ce n'est pas aussi une convention aussi répandue que je m'y attendais.
+                    </p>
+                </div>
+                <div class="en noshow">
+                    <div class="post-meta">
+                        <h2>
+                            New project launched:
+                            <a href="https://github.com/hamelin/ziphttpd">
+                                ziphttpd
+                            </a>
+                            <a class="selflink" href="#20251208-new-project-launched-ziphttpd">
+                                Λ
+                            </a>
+                        </h2>
+                        <div>
+                            Monday, December 8, 2025
+                        </div>
+                    </div>
+                    <p>
+                        I often download a Zip file of web-ish documents,
+which I'd like to browse.
+In principle,
+this is as easy as unpacking the archive to my local storage,
+then run a web server such as
+                        <a href="https://docs.python.org/3/library/http.server.html">
+                            <code>
+                                http.server
+                            </code>
+                        </a>
+                        .
+However,
+for various reasons,
+this decompression steps chafes.
+I would like to just HTTP-GET the stuff in the Zip file.
+                    </p>
+                    <p>
+                        That's precisely what
+                        <a href="https://github.com/hamelin/ziphttpd">
+                            <code>
+                                ziphttpd
+                            </code>
+                        </a>
+                        enables.
+Let's say I just downloaded the
+                        <a href="https://sqlite.org/2025/sqlite-doc-3510100.zip">
+                            SQLite documentation
+                        </a>
+                        to browse it while off the Internet:
+                    </p>
+                    <div class="highlight">
+                        <pre><span></span>uvx<span class="w"> </span>ziphttpd<span class="w"> </span>-B<span class="w"> </span>sqlite-doc-3510100.zip
+</pre>
+                    </div>
+                    <p>
+                        The web server starts and spits:
+                    </p>
+                    <pre><code>Server set up at http://127.0.0.1:63631/
+</code></pre>
+                    <p>
+                        I go to my web browser and punch in URL
+                        <code>
+                            http://127.0.0.1:63631/sqlite-doc-3510100/docs.html
+                        </code>
+                        and I can get my reading on.
+                    </p>
+                    <p>
+                        The main issue I noticed so far is that I have not yet implemented the enumeration
+of the file hierarchy included in the archive.
+Only files are mapped to URLs on this server.
+For a directory to be GET-able,
+it must contain an
+                        <code>
+                            index.html
+                        </code>
+                        file,
+which is then echoed as response,
+and this file structure convention is not as pervasive as I had initially thought.
+                    </p>
+                </div>
+            </article>
+            <article>
                 <a id="20251101-on-we-need-more-utopias">
                 </a>
                 <div class="polyglot">
@@ -79,10 +234,12 @@
                     <p>
                         J'ai écrit
                         <a href="https://substack.com/@benoithamelin696004/note/c-172477570">
-                            quelques mots</a>
+                            quelques mots
+                        </a>
                         sur
                         <a href="https://themodernvillage.substack.com/p/we-need-more-utopias">
-                            l'article</a>
+                            l'article
+                        </a>
                         de mon amie Nikali
 à propos des idées utopiques et de leur réalisation.
                     </p>
@@ -105,7 +262,8 @@
                     <p>
                         I wrote
                         <a href="https://substack.com/@benoithamelin696004/note/c-172477570">
-                            a few words</a>
+                            a few words
+                        </a>
                         on my friend Nikali's
                         <a href="https://themodernvillage.substack.com/p/we-need-more-utopias">
                             post
