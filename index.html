@@ -122,8 +122,8 @@ Disons que je viens de télécharger la
                         et c'est parti.
                     </p>
                     <p>
-                        La faiblesse actuelle du projet est de ne pas énumérer le contenu de la hiérarchie
-de fichiers comprise dans l'archive.
+                        <strike>La faiblesse actuelle du projet est de ne pas énumérer le contenu de la hiérarchie
+de fichiers comprise dans l'archive.</strike>
 Seuls les fichiers sont associés à un URL consultable.
 Il faut qu'un <em>répertoire</em> contienne un
 fichier
@@ -132,6 +132,12 @@ fichier
                         </code>
                         pour être accédé directement,
 ce n'est pas aussi une convention aussi répandue que je m'y attendais.
+                    </p>
+                    <p>
+                        <strong>Mise à jour du 12 décembre 2025</strong>:
+                        ziphttpd sert maintenant une description automatique
+                        des répertoires qui ne contiennent pas un fichier
+                        <tt>index.html</tt>.
                     </p>
                 </div>
                 <div class="en noshow">
@@ -197,9 +203,9 @@ Let's say I just downloaded the
                         and I can get my reading on.
                     </p>
                     <p>
-                        The main issue I noticed so far is that I have not yet implemented the enumeration
+                        <strike>The main issue I noticed so far is that I have not yet implemented the enumeration
 of the file hierarchy included in the archive.
-Only files are mapped to URLs on this server.
+Only files are mapped to URLs on this server.</strike>
 For a directory to be GET-able,
 it must contain an
                         <code>
@@ -208,6 +214,11 @@ it must contain an
                         file,
 which is then echoed as response,
 and this file structure convention is not as pervasive as I had initially thought.
+                    </p>
+                    <p>
+                        <strong>Update December 12 2025</strong>:
+                        ziphttpd now serves automatic descriptions of directories
+                        that don't contain a <tt>index.html</tt> file.
                     </p>
                 </div>
             </article>
